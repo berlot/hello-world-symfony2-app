@@ -14,7 +14,7 @@ Feature: I would like to edit mountains
   Examples:
     |    mountain                  | hight |
     | Example The Mount Everest    | 8844  |
-    | Example The Makalu           | 8485  |
+    | Example The Czo Oju          | 8188  |
 
 
   Scenario Outline: Edit records
@@ -33,19 +33,19 @@ Feature: I would like to edit mountains
 
   Examples:
     |  old-mountain              |    new-mountain          | new-hight |
-    | Example The Mount Everest  | EDITED The K2            |  8420     |
+    | Example The Mount Everest  | EDITED The Mount Everest |  8850     |
 
 
 
   Scenario Outline: Delete records
     When I go to "/mountain"
     Then I should see "<mountain>"
-     And I follow "mountain>"
+     And I follow "<mountain>"
     Then I should see "<mountain>"
     When I press "Delete"
      And I should not see "<mountain>"
 
   Examples:
     |  mountain                    |
-    | Example The Makalu           |
-    | EDITED The K2                |
+    | Example The Czo Oju          |
+    | EDITED The Mount Everest     |
